@@ -5,8 +5,8 @@ using namespace std;
 int main (void) {
     int contador;
     string palabra;
-    cout << contador << ". " << palabra << endl;
-    /*while (true) {
+    
+    while (true) {
         cout << contador << ". " << palabra << endl;
-    }*/
+    }
 }

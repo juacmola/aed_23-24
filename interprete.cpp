@@ -6,6 +6,8 @@
 
 using namespace std;
 
+DicPalabras dic;
+
 string normalizar (string cad){
     string salida="";
 

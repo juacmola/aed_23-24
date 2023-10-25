@@ -1,5 +1,12 @@
 #include "diccionario.hpp"
 
+#include <iostream>
+#include <sstream>
+
+#include <list>
+
+using namespace std;
+
 DicPalabras dic;
 
 DicPalabras::DicPalabras () {

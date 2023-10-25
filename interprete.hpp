@@ -14,3 +14,5 @@ using namespace std;
 
 const string STR_ESPEC="áéíóúÁÉÍÓÚ";
 
+
+#endif

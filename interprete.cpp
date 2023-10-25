@@ -1,5 +1,5 @@
 
-#include 
+#include "interprete.hpp"
 
 string normalizar (string cad){
     string salida="";
@@ -38,29 +38,8 @@ string normalizar (string cad){
 }
 
 
-Interprete::Interprete() {
-	diccionarioPalabras = new DicPalabras();
-}
-Interprete::~Interprete(){
-	delete diccionarioPalabras;
-}
 
 
-
-
-void Interprete::procesar(string comando){
-    if (comando=="<insertar>") INSERTAR();
-    else if (comando=="<vaciar>") VACIAR();
-    else if (comando=="<buscar>") BUSCAR();
-    else if (comando=="<partidas>") PARTIDAS();
-    else if (comando=="<alocado>") ALOCADO();
-    else if (comando=="<césar>") CESAR();
-    else if (comando=="<juanagra>") JUANAGRAMA();
-    else if (comando=="<saco>") SACO();
-    else if (comando=="<consomé>") CONSOME();
-    else if (comando=="<alarga>") ALARGA();
-    else if (comando=="<exit>") EXIT();
-}
 
 
 void PARTIDAS(){
@@ -129,6 +108,7 @@ void INSERTAR(){
     while(cin>>palabra){
         if(palabra=="</insertar>")
             break;
+	dic.insertar(normalizar(palabra)); //Insertamos la palabra normalizada
         M+=1;
         contador+=1;
     }
@@ -137,7 +117,7 @@ void INSERTAR(){
 }
 
 void VACIAR(){
-    contador=0;
+    dic.vaciar();
     cout << "Vaciando" << endl << "Total diccionario: " <<
             contador << " palabras" << endl;
 }
@@ -145,8 +125,13 @@ void VACIAR(){
 void BUSCAR(){
     string palabra;
     cin >> palabra;
-    cout << "Buscando: " << normalizar(palabra) << " -> " <<
+    if (dic.buscar(normalizar(palabra)) == true){ //La buscamos normalizada porque así es como se guarda
+	cout << "Buscando: " << normalizar(palabra) << " -> " <<
+            "Encontrada" << endl;
+    }else{
+    	cout << "Buscando: " << normalizar(palabra) << " -> " <<
             "No encontrada" << endl;
+    }
 }
 
 void EXIT(){
@@ -154,6 +139,18 @@ void EXIT(){
     exit(0);
 }
 
-
+void procesar(string comando){
+    if (comando=="<insertar>") INSERTAR();
+    else if (comando=="<vaciar>") VACIAR();
+    else if (comando=="<buscar>") BUSCAR();
+    else if (comando=="<partidas>") PARTIDAS();
+    else if (comando=="<alocado>") ALOCADO();
+    else if (comando=="<césar>") CESAR();
+    else if (comando=="<juanagra>") JUANAGRAMA();
+    else if (comando=="<saco>") SACO();
+    else if (comando=="<consomé>") CONSOME();
+    else if (comando=="<alarga>") ALARGA();
+    else if (comando=="<exit>") EXIT();
+}
 
 

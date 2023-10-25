@@ -16,9 +16,9 @@ class DicPalabras {
         int contador;
     public:
         DicPalabras ();
-        void inserta (string palabra);
-        bool consulta (string palabra);
-        void vacia (void);
-        int nTotal (void) {return contador;}
+        void vaciar ();
+        void insertar (string palabra);
+        bool consultar (string palabra);
+        int numElem (void) {return contador;}
 };
 #endif

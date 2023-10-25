@@ -19,13 +19,27 @@ void DicPalabras::vaciar (void) {
 }
 
 void DicPalabras::inserta (string palabra){
-    //Insertar palabra en lista de forma ordenada
-    //Si no estaba ya, contador++
+    list<string>::iterator it = lista.begin(); //Creamos una lista y la iniciamos por el principio
+    while (it!=lista.end() && *it<palabra){ //Recorremos la lista buscando la palabra
+        it++;
+    }
+    if ((it==lista.end()) || (*it!=palabra)){ //Si no la encontramos la insertamos
+        lista.insert(it, palabra);
+        contador++;
+    }
 }
 
 bool DicPalabras::consulta (string palabra){
-    //Buscar en la lista la palabra
-    //Devolver true/false si está o no, respectivamente
+    list<string>::iterator it = lista.begin(); //Creamos una lista y la iniciamos por el principio
+    while (it!=lista.end() && *it<palabra){ //Recorremos la lista buscando la palabra
+        it++;
+    }
+    if (*it==palabra){ //Si la encontramos devuelve true
+        return true;
+    }
+    else{ //Si no la encontramos devuelve false
+        return false;
+    }
 }
 
 

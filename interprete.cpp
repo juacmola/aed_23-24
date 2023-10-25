@@ -1,5 +1,10 @@
-
 #include "interprete.hpp"
+#include "diccionario.hpp"
+
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 string normalizar (string cad){
     string salida="";

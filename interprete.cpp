@@ -116,8 +116,7 @@ void INSERTAR(){
         if(palabra=="</insertar>")
             break;
 	dic.insertar(normalizar(palabra)); //Insertamos la palabra normalizada
-        M+=1;
-        contador+=1;
+        M++;
     }
     cout << "Insertando: " << M << " palabras" << endl <<
             "Total diccionario: " << contador << " palabras" << endl;
@@ -132,7 +131,7 @@ void VACIAR(){
 void BUSCAR(){
     string palabra;
     cin >> palabra;
-    if (dic.buscar(normalizar(palabra)) == true){ //La buscamos normalizada porque así es como se guarda
+    if (dic.buscar(normalizar(palabra))){ //La buscamos normalizada porque así es como se guarda
 	cout << "Buscando: " << normalizar(palabra) << " -> " <<
             "Encontrada" << endl;
     }else{

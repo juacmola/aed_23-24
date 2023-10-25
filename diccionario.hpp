@@ -1,14 +1,9 @@
 #ifndef _DICCIONARIO_H_INCLUDED
 #define _DICCIONARIO_H_INCLUDED
 
-#include <iostream>
-#include <cstdio>
-#include <sstream>
 #include <list>
 
 using namespace std;
-
-
 
 class DicPalabras {
     private:

@@ -130,7 +130,7 @@ void VACIAR(){
 void BUSCAR(){
     string palabra;
     cin >> palabra;
-    if (dic.consultar(normalizar(palabra)) == true){ //La buscamos normalizada porque así es como se guarda
+    if (dic.consultar(normalizar(palabra))){ //La buscamos normalizada porque así es como se guarda
 	cout << "Buscando: " << normalizar(palabra) << " -> " <<
             "Encontrada" << endl;
     }else{

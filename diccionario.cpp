@@ -7,8 +7,6 @@
 
 using namespace std;
 
-DicPalabras dic;
-
 DicPalabras::DicPalabras () {
     contador= 0;
 }
@@ -18,26 +16,26 @@ void DicPalabras::vaciar (void) {
     contador= 0;
 }
 
-void DicPalabras::inserta (string palabra){
+void DicPalabras::insertar (string palabra){
     list<string>::iterator it = lista.begin(); //Creamos una lista y la iniciamos por el principio
     while (it!=lista.end() && *it<palabra){ //Recorremos la lista buscando la palabra
         it++;
     }
-    if ((it==lista.end()) || (*it!=palabra)){ //Si no la encontramos la insertamos
+    if ((it==lista.end()) || (*it!=palabra)){ //Si no la encontramos, la insertamos
         lista.insert(it, palabra);
         contador++;
     }
 }
 
-bool DicPalabras::consulta (string palabra){
-    list<string>::iterator it = lista.begin(); //Creamos una lista y la iniciamos por el principio
+bool DicPalabras::consultar (string palabra){
+    list<string>::iterator it = lista.begin(); //Creamos una lista y la inicializamos desde el inicio
     while (it!=lista.end() && *it<palabra){ //Recorremos la lista buscando la palabra
         it++;
     }
-    if (*it==palabra){ //Si la encontramos devuelve true
+    if ((it!=lista.end()) && (*it==palabra)){ //Si la encontramos, devolvemos true
         return true;
     }
-    else{ //Si no la encontramos devuelve false
+    else{ //Si no la encontramos, devolvemos false
         return false;
     }
 }

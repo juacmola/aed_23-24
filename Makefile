@@ -1,5 +1,5 @@
 a.out: diccionario.o interprete.o main.o
-	g++ list.o interprete.o main.o
+	g++ diccionario.o interprete.o main.o
 
 diccionario.o: diccionario.cpp diccionario.hpp
 	g++ -c diccionario.cpp

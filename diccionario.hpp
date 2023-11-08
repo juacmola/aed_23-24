@@ -9,11 +9,12 @@ class DicPalabras {
     private:
         list<string> lista;
         int contador;
+        TablaHash tabla;
     public:
         DicPalabras ();
-        void vaciar ();
-        void insertar (string palabra);
-        bool consultar (string palabra);
-        int numElem (void) {return contador;}
+        void vaciar () { tabla.vaciar(); }
+        void insertar (string palabra) { tabla.insertar(); }
+        bool consultar (string palabra) { tabla.consultar(); }
+        int numElem (void) { return tabla.numElem(); }
 };
 #endif

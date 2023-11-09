@@ -3,14 +3,12 @@
 #include <iostream>
 #include <sstream>
 
-#include <list>
-
 using namespace std;
 
 DicPalabras::DicPalabras () {
-    contador= 0;
+    TablaHash tabla;
 }
-
+/*
 void DicPalabras::vaciar (void) {
     lista.clear();
     contador= 0;
@@ -39,5 +37,4 @@ bool DicPalabras::consultar (string palabra){
         return false;
     }
 }
-
-
+*/

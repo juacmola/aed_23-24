@@ -1,3 +1,5 @@
+#include "TablaHash.hpp"
+
 #ifndef _DICCIONARIO_H_INCLUDED
 #define _DICCIONARIO_H_INCLUDED
 
@@ -7,14 +9,12 @@ using namespace std;
 
 class DicPalabras {
     private:
-        list<string> lista;
-        int contador;
         TablaHash tabla;
     public:
         DicPalabras ();
         void vaciar () { tabla.vaciar(); }
-        void insertar (string palabra) { tabla.insertar(); }
-        bool consultar (string palabra) { tabla.consultar(); }
+        void insertar (string palabra) { tabla.insertar(palabra); }
+        bool consultar (string palabra) { tabla.consultar(palabra); }
         int numElem (void) { return tabla.numElem(); }
 };
 #endif

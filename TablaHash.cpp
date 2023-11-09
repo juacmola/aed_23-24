@@ -3,8 +3,8 @@
 void TablaHash::reestructurar(){
 	unsigned long t;
 
-	int tamprevio = tam;
-	tam = tam*2;
+	int tamprevio = B;
+	B = B*2;
 	list<string> *nuevaLista = new list<string>[tam];
 
 	for(int i = 0; i<tamprevio; i++){
@@ -12,14 +12,14 @@ void TablaHash::reestructurar(){
 
 		while(iter!=tablaH[i].end()){
 			string palabra = *iter;
-			t = Hash(palabra)%tam;
+			t = Hash(palabra)%B;
 			list<string>::iterator nuevoIter = nuevaLista[t].begin();
 
-            while (nuevoIter!=nuevaLista[t].end() && *nuevoIter<palabra) nuevoIter++;
-
-                if (nuevoIter==nuevaLista[t].end() || *nuevoIter!=palabra){
-                    nuevaLista[t].insert(nuevoIter, palabra);
-                }iter++;
+				while (nuevoIter!=nuevaLista[t].end() && *nuevoIter<palabra) nuevoIter++;
+	
+						if (nuevoIter==nuevaLista[t].end() || *nuevoIter!=palabra){
+								nuevaLista[t].insert(nuevoIter, palabra);
+						}iter++;
 		}
 	}
 	delete[] tablaH;
@@ -27,21 +27,21 @@ void TablaHash::reestructurar(){
 }
 
 TablaHash::TablaHash(){
-	tam = 500;
-	tablaH = new list<string>[tam];
+	B = 500;
+	tablaH = new list<string>[B];
 
-	nElementos = 0;
-}
-
-void TablaHash::vacia(void){
-   for(unsigned int i=0; i < tam; i++) {
-        tablaH[i].clear();
-   }
-   nElementos = 0;
+	nElem = 0;
 }
 
 TablaHash::~TablaHash(){
 	delete[] tablaH;
+}
+
+void TablaHash::vacia(void){
+   for(unsigned int i=0; i < B; i++) {
+        tablaH[i].clear();
+   }
+   nElem = 0;
 }
 
 unsigned long TablaHash::Hash(string palabra){
@@ -54,8 +54,8 @@ unsigned long TablaHash::Hash(string palabra){
 	}return resultado;
 }
 
-bool TablaHash::consulta(string palabra){
-    unsigned long t = Hash(palabra)%tam;
+bool TablaHash::consultar (string palabra){
+    unsigned long t = Hash(palabra)%B;
     list<string>::iterator iter = tablaH[t].begin();
 
     while(iter!=tablaH[t].end() && (*iter<palabra)) iter++;
@@ -65,15 +65,15 @@ bool TablaHash::consulta(string palabra){
     return true;
 }
 
-void TablaHash::inserta(string palabra){
-    unsigned long t = Hash(palabra)%tam;
+void TablaHash::insertar (string palabra){
+    unsigned long t = Hash(palabra)%B;
     list<string>::iterator iter = tablaH[t].begin();
 
     while (iter!=tablaH[t].end() && *iter<palabra) iter++;
 
     if (iter==tablaH[t].end() || *iter!=palabra){
-        nElementos++;
+        nElem++;
         tablaH[t].insert(iter, palabra);
     }
-    if(nElementos > 2*tam) reestr();
+    if(nElem > 2*B) reestr();
 }

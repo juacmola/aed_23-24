@@ -10,5 +10,5 @@ interprete.o: interprete.cpp interprete.hpp diccionario.hpp
 TablaHash.o: TablaHash.cpp TablaHash.hpp interprete.hpp
 	g++ -c TablaHash.cpp
 
-main.o: main.cpp diccionario.hpp interprete.hpp TablaHaah.hpp
+main.o: main.cpp diccionario.hpp interprete.hpp TablaHash.hpp
 	g++ -c main.cpp

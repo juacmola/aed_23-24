@@ -1,6 +1,6 @@
 #include "Anagramas.h"
 
-void Anagramas::reestr(){
+void Anagramas::reestructurar(){
 	unsigned long t;
 
 	int tamprevio = tam;
@@ -31,13 +31,6 @@ Anagramas::Anagramas(){
 	A = new list<string>[tam];
 
 	nElem = 0;
-}
-
-void Anagramas::vacia(void){
-   for(unsigned int i=0; i < tam; i++) {
-        A[i].clear();
-   }
-   nElem = 0;
 }
 
 Anagramas::~Anagramas(){
@@ -97,3 +90,9 @@ void Anagramas::insertar(string palabra){
     if(nElem > 2*tam) reestr();
 }
 
+void Anagramas::vaciar(void){
+   for(unsigned int i=0; i < tam; i++) {
+        A[i].clear();
+   }
+   nElem = 0;
+}

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <list>
 
 using namespace std;
 
@@ -44,11 +45,6 @@ string normalizar (string cad){
     return salida;
 }
 
-
-
-
-
-
 void PARTIDAS(){
     string palabra;
     cout << "Partidas: ";
@@ -83,8 +79,18 @@ void CESAR(){
 void JUANAGRAMA(){
     string palabra;
     cin >> palabra;
-    cout << "Juanagrama: " << normalizar(palabra) << endl <<
-            "No implementado" << endl;
+
+	cout << "Juanagrama: " << normalizar(palabra) << " -> ";
+	
+    list<string> juan = dic.anagramas(normalizar(palabra));
+    list<string>::iterator iter = juan.begin();
+
+	if(iter==juan.end()) cout << " ";
+    else{
+		juan.sort();
+		cout << *iter;
+	}
+    
 }
 
 void SACO(){

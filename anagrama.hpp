@@ -11,9 +11,9 @@ using namespace std;
 class Anagramas {
 	private:
 		list<string> *A;
-		int tam;
-		void reestr();
-		int nElementos;
+		int B;
+		void reestructurar();
+		int nElem;
 	public:
 		Anagramas();
 		~Anagramas();

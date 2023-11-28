@@ -1,7 +1,9 @@
+
 #include "TablaHash.hpp"
 
 #include <list>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -50,12 +52,10 @@ void TablaHash::vaciar(void){
 }
 
 unsigned long TablaHash::Hash(string palabra){
-	long base = 16777619;
-	long resultado = 2166136261;
+	long resultado = 0;
 
 	for (int i = 0; i < palabra.length(); i++){
-		resultado = resultado * base;
-		resultado = resultado ^ palabra[i];
+		resultado = resultado + palabra[i];
 	}return resultado;
 }
 
@@ -81,4 +81,25 @@ void TablaHash::insertar (string palabra){
         T[t].insert(iter, palabra);
     }
     if(nElem > 2*B) reestructurar();
+}
+
+list<string> TablaHash::anagramas(string palabra){
+	unsigned long t = Hash(palabra) % B;
+
+	list<string>::iterator iter = T[t].begin();
+
+	list<string> nuevaLista;
+
+	while(iter!=T[t].end()){
+		string palabra2 = palabra;
+		sort(palabra2.begin(),palabra2.end());
+
+		string anag = *iter;
+		sort(anag.begin(),anag.end());
+
+		if(anag == palabra2)
+            nuevaLista.push_back(*iter);
+
+		iter++;
+	}return nuevaLista;
 }

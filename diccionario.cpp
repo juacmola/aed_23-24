@@ -5,9 +5,7 @@
 
 using namespace std;
 
-DicPalabras::DicPalabras () {
-    TablaHash tabla;
-}
+DicPalabras::DicPalabras() : tabla(){}
 /*
 void DicPalabras::vaciar (void) {
     lista.clear();

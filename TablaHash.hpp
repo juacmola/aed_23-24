@@ -21,11 +21,6 @@ class TablaHash {
         	void vaciar (void);
 		int numElem (void) { return nElem; }
 		
-		//list<string> getTabla() { return *T; }
-		//list<string>::iterator begin() const { return T->begin(); }
-		//list<string>::iterator end() const { return T->end(); }
-		
 		list<string> anagramas(string palabra);
-		
 };
 #endif

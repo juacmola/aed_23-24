@@ -45,37 +45,6 @@ string normalizar (string cad){
     return salida;
 }
 
-void PARTIDAS(){
-    string palabra;
-    cout << "Partidas: ";
-
-    cin>>palabra;
-
-    if(palabra!="</partidas>"){
-        cout << normalizar(palabra);
-        while(cin>>palabra){
-            if(palabra=="</partidas>")
-                break;
-            cout << " " << normalizar(palabra);
-        }
-    }
-    cout << endl << "No implementado" << endl;
-}
-
-void ALOCADO(){
-    string palabra;
-    cin >> palabra;
-    cout << "Alocado: " << normalizar(palabra) << endl <<
-            "No implementado" << endl;
-}
-
-void CESAR(){
-    string palabra;
-    cin >> palabra;
-    cout << "César: " << normalizar(palabra) << endl <<
-            "No implementado" << endl;
-}
-
 void JUANAGRAMA(){
     string palabra;
     cin >> palabra;
@@ -93,26 +62,6 @@ void JUANAGRAMA(){
     
 }
 
-void SACO(){
-    string palabra1, palabra2;
-    cin >> palabra1 >> palabra2;
-    cout << "Saco: " << normalizar(palabra1) << " " << normalizar(palabra2) <<
-            endl << "No implementado" << endl;
-}
-
-void CONSOME(){
-    string palabra;
-    cin >> palabra;
-    cout << "Consomé: " << normalizar(palabra) << endl <<
-            "No implementado" << endl;
-}
-
-void ALARGA(){
-    string palabra;
-    cin >> palabra;
-    cout << "Alarga: " << normalizar(palabra) << endl <<
-            "No implementado" << endl;
-}
 void INSERTAR(){
     string palabra;
     int M=0;
@@ -154,13 +103,7 @@ void procesar(string comando){
     if (comando=="<insertar>") INSERTAR();
     else if (comando=="<vaciar>") VACIAR();
     else if (comando=="<buscar>") BUSCAR();
-    else if (comando=="<partidas>") PARTIDAS();
-    else if (comando=="<alocado>") ALOCADO();
-    else if (comando=="<césar>") CESAR();
     else if (comando=="<juanagra>") JUANAGRAMA();
-    else if (comando=="<saco>") SACO();
-    else if (comando=="<consomé>") CONSOME();
-    else if (comando=="<alarga>") ALARGA();
     else if (comando=="<exit>") EXIT();
 }
 

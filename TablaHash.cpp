@@ -78,7 +78,7 @@ void TablaHash::vaciar(void){
     return resultado;
 }*/
 
-unsigned long TablaHash::Hash(string palabra){
+/*unsigned long TablaHash::Hash(string palabra){
     long resultado=3*(abs(int(palabra[0])));
     
     for (unsigned i=1;i<palabra.length();i++){
@@ -86,6 +86,16 @@ unsigned long TablaHash::Hash(string palabra){
     }
     resultado+=B;
     return resultado;
+}*/
+
+unsigned long TablaHash::Hash(string palabra){
+    unsigned long hash = 5381;
+    int c;
+
+    while ((c = *palabra++))
+        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+
+    return hash;
 }
 
 bool TablaHash::consultar (string palabra){

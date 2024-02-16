@@ -6,45 +6,39 @@
 #include <list>
 #include <algorithm>
 #include <cstring>
+#include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
 DicPalabras dic;
 
 string normalizar (string cad){
-    string salida="";
+    unordered_map<char, char> letras = {{0xA1, 0x41}, {0xA9, 0x45}, {0xAD, 0x49},
+                                             {0xB3, 0x4F}, {0xBA, 0x55}, {0x81, 0x41},
+                                             {0x89, 0x45}, {0x8D, 0x49}, {0x93, 0x4F},
+                                             {0x9A, 0x55}};
 
-    int letras[10][2]= {{0xA1, 0x41}, {0xA9, 0x45}, {0xAD, 0x49},
-                    {0xB3, 0x4F}, {0xBA, 0x55}, {0x81, 0x41},
-                    {0x89, 0x45}, {0x8D, 0x49}, {0x93, 0x4F},
-                    {0x9A, 0x55}};
+    transform(cad.begin(), cad.end(), cad.begin(), ::toupper);
 
     for(unsigned i=0; i<cad.length(); i++){
-        if (cad[i] >= 'a' && cad[i] <= 'z')
-            salida+=toupper(cad[i]);
-        else if (cad[i]==(char)0xC3){
+        if (cad[i]==(char)0xC3){
             if (cad[i+1]==(char)0xBC || cad[i+1]==(char)0x9C){
-                salida+=(char)0xC3;
-                salida+=(char)0x9C;
+                cad[i+1]=(char)0x9C;
                 i++;
             }else if (cad[i+1]==(char)0xB1 || cad[i+1]==(char)0x91){
-                salida+=(char)0xC3;
-                salida+=(char)0x91;
+                cad[i+1]=(char)0x91;
                 i++;
             }else if (STR_ESPEC.find(cad[i+1])!=string::npos){
-                for (int j= 0; j<10; j++){
-                    if (cad[i+1]==(char)letras[j][0]){
-                        salida+=(char)letras[j][1];
-                        i++;
-                        break;
-                    }
+                auto it = letras.find(cad[i+1]);
+                if (it != letras.end()){
+                    cad[i+1] = it->second;
+                    i++;
                 }
-            }else{
-                salida+=cad[i];
             }
-        }else {salida+=cad[i];}
+        }
     }
-    return salida;
+    return cad;
 }
 
 void PARTIDAS(){

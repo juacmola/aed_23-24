@@ -3,6 +3,7 @@
 #include <list>
 #include <string>
 #include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
@@ -67,7 +68,7 @@ void TablaHash::vaciar(void){
 	}return resultado;
 }*/
 
-/*unsigned long TablaHash::Hash(const string &palabra) {
+/*unsigned long TablaHash::Hash(string palabra) {
     const unsigned int p = 131;  // un número primo para evitar colisiones
     unsigned long resultado = 0;
 
@@ -78,7 +79,7 @@ void TablaHash::vaciar(void){
     return resultado;
 }*/
 
-/*unsigned long TablaHash::Hash(string palabra){
+unsigned long TablaHash::Hash(string palabra){
     long resultado=3*(abs(int(palabra[0])));
     
     for (unsigned i=1;i<palabra.length();i++){
@@ -86,17 +87,26 @@ void TablaHash::vaciar(void){
     }
     resultado+=B;
     return resultado;
-}*/
+}
 
-unsigned long TablaHash::Hash(string palabra){
+/*unsigned long TablaHash::Hash(string palabra){
     unsigned long hash = 5381;
     int c;
 
     while ((c = *palabra++))
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+        hash = ((hash << 5) + hash) + c; //hash * 33 + c
 
     return hash;
-}
+}*/
+
+/*unsigned long TablaHash::Hash(string palabra) {
+	int valor = 5381;
+	for(unsigned i=0; i < palabra.length(); i++) {
+		valor *= 33;
+		valor ^= palabra[i];
+	}
+	return abs(valor);
+}*/
 
 bool TablaHash::consultar (string palabra){
     unsigned long t = Hash(palabra)%B;
@@ -122,23 +132,57 @@ void TablaHash::insertar (string palabra){
     if(nElem > 2*B) reestructurar();
 }
 
-list<string> TablaHash::anagramas(string palabra){
-	unsigned long t = Hash(palabra) % B;
+/*list<string> TablaHash::anagramas(string palabra){
+	unsigned long t = Hash(palabra);
 
 	list<string>::iterator iter = T[t].begin();
 
 	list<string> nuevaLista;
 
-	string palabra2 = palabra;
-	sort(palabra2.begin(),palabra2.end());
+	string palabraOrdenada = palabra;
+	sort(palabraOrdenada .begin(),palabraOrdenada .end());
 
 	while(iter!=T[t].end()){
 		string anag = *iter;
 		sort(anag.begin(),anag.end());
 
-		if(anag == palabra2)
+		if(anag == palabraOrdenada )
             nuevaLista.push_back(*iter);
 
 		iter++;
 	}return nuevaLista;
+}*/
+
+list<string> TablaHash::anagramas(string palabra) {
+    unsigned long t = Hash(palabra)%B;
+
+    list<string>::iterator iter = T[t].begin();
+    list<string> nuevaLista;
+
+    unordered_map<char, int> frecuenciaPalabra;
+
+    for (char c : palabra)
+        frecuenciaPalabra[c]++;
+
+    while (iter != T[t].end()) {
+        unordered_map<char, int> frecuenciaAnagrama;
+        bool esAnagrama = true;
+
+        for (char c : *iter)
+            frecuenciaAnagrama[c]++;
+
+        for (auto &p : frecuenciaPalabra) {
+            if (frecuenciaAnagrama[p.first] != p.second) {
+                esAnagrama = false;
+                break;
+            }
+        }
+
+        if (esAnagrama)
+            nuevaLista.push_back(*iter);
+
+        iter++;
+    }
+    return nuevaLista;
 }
+

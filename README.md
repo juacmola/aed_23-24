@@ -10,19 +10,15 @@ The project is intended for educational purpose only.
 
 ## Contents
 
-- [Exercises of Algorithms and Data Structures](#exercises-of-algorithms-and-data-structures)
-        - [Disclaimer](#disclaimer)
-  - [Contents](#contents)
-  - [Introduction](#introduction)
-  - [How to Use the Projects](#how-to-use-the-projects)
-  - [Projects \& Exercises](#projects--exercises)
-    - [Exercises](#exercises)
-    - [Maude](#maude)
-    - [Word Corrector](#word-corrector)
-    - [Graphs](#graphs)
-  - [Credits](#credits)
-  - [License](#license)
-          - [README.md created with ❤️ by juacmola](#readmemd-created-with-️-by-juacmola)
+- [Introduction](#introduction)
+- [How to Use the Projects](#how-to-use-the-projects)
+- [Projects \& Exercises](#projects--exercises)
+        - [Exercises](#exercises)
+        - [Maude](#maude)
+        - [Word Corrector](#word-corrector)
+        - [Graphs](#graphs)
+- [Credits](#credits)
+- [License](#license)
 
 ---
 

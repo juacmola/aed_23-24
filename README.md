@@ -114,8 +114,6 @@ This project has the default copyright license. That means that no one may repro
 
 [Back to contents](#contents)
 
-externnal
-
 ---
 
 ###### README.md created with ❤️ by [juacmola](https://github.com/juacmola)

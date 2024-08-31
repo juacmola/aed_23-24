@@ -41,11 +41,11 @@ The reports and the code comments are written in Spanish. If you have any questi
 In this case, we have used Visual Studio Code to develop the exercises, but you can use another IDE. The language is Maude and C++. The OS is Linux. The terminal is used to compile and run the programs. For the Maude exercise you do not need the terminal, just open the documents and the report. To run the exercises, you can follow the following steps:
 
 1. Download the repository. Click the 'Code' button and download the ZIP file:
-  ![Download ZIP](./images/download.png)
-2. Unzip the file in the folder you want.
-3. Open the terminal in the folder.
-4. For `comodines` and `Grafos` exercises, you can compile the program with the command `g++ bishop.cpp -o bishop` and run it with `./bishop` (changing the name of the files in each case).
-5. For `wordCorrector` project, follow the instructions that you will find in the [Word Corrector](#word-corrector) section.
+![Download ZIP](./images/download.png)
+3. Unzip the file in the folder you want.
+4. Open the terminal in the folder.
+5. For `comodines` and `Grafos` exercises, you can compile the program with the command `g++ bishop.cpp -o bishop` and run it with `./bishop` (changing the name of the files in each case).
+6. For `wordCorrector` project, follow the instructions that you will find in the [Word Corrector](#word-corrector) section.
 
 [Back to contents](#contents)
 

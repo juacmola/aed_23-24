@@ -84,7 +84,7 @@ What we are doing here is to compile the program and run it. The program is made
 
 ### [Graphs](./Projects&Exercises/Grafos)
 
-To learn how to make graph algorithms, I made four problems. Some of the algorithms were sown in class, but they are recognizable to   many people. In the report are the instructions of how I solved them.
+To learn how to make graph algorithms, I made four problems. Some of the algorithms were shown in class, but they are recognizable to many people. In the report are the instructions of how I solved them.
 
 [Back to contents](#contents)
 

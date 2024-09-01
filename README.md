@@ -42,10 +42,10 @@ In this case, we have used Visual Studio Code to develop the exercises, but you 
 
 1. Download the repository. Click the 'Code' button and download the ZIP file:
 ![Download ZIP](./images/download.png)
-3. Unzip the file in the folder you want.
-4. Open the terminal in the folder.
-5. For `comodines` and `Grafos` exercises, you can compile the program with the command `g++ bishop.cpp -o bishop` and run it with `./bishop` (changing the name of the files in each case).
-6. For `wordCorrector` project, follow the instructions that you will find in the [Word Corrector](#word-corrector) section.
+2. Unzip the file in the folder you want.
+3. Open the terminal in the folder.
+4. For `comodines` and `Grafos` exercises, you can compile the program with the command `g++ bishop.cpp -o bishop` and run it with `./bishop` (changing the name of the files in each case).
+5. For `wordCorrector` project, follow the instructions that you will find in the [Word Corrector](#word-corrector) section.
 
 [Back to contents](#contents)
 
@@ -59,7 +59,7 @@ In this section, they will appear in order of the submission date.
 
 You can find the exercises here: [folder](./Projects&Exercises/comodines). The purpose of these exercises was to get some extra points in the course.
 
-- [bishop](./Projects&Exercises/comodines/bishop.cpp) - This exercise is about the bishop piece of chess. The program receives the initial position of the bishop and the final position. The program must determine the number of positions the bishop will make to finish inthe final position.
+- [bishop](./Projects&Exercises/comodines/bishop.cpp) - This exercise is about the bishop piece of chess. The program receives the initial position of the bishop and the final position. The program must determine the number of positions the bishop will make to finish in the final position.
 
 - [naranjasopistachos](./Projects&Exercises/comodines/naranjasopistachos.cpp) - In this exercise, the player must write down in the terminal the kilometer where he starts and the type of stand (oranges or pistachios). The program must determine which type of stand he will find if he drive the kilometers that the player has written.
 
@@ -72,10 +72,10 @@ The dates of teh report are from 2021 because I did not pass the course at the f
 
 ### [Word Corrector](./Projects&Exercises/wordCorrector)
 
-The Word Corrector project was the longest by far. It is divided in four sections, where the difficulty increase in each one. Overall, we were recontructing a dictionary and correcting words. Mooshak (the webpage with all the statement exercise), gave us the instructions of the project. There were some mandatory parts of the project and also some optional features (it was in our hand to choose which one to implement).
-[Section 1](./Projects&Exercises/wordCorrector/Exercises/seccion1/) helped us to  get the basic structure of the project. [Section 2](./Projects&Exercises/wordCorrector/Exercises/seccion2/) implements a hash table and an Anagram feature(this was optional). [Section 3](./Projects&Exercises/wordCorrector/Exercises/seccion3/) implements a trie tree and a 'strech words' feature (also optional). The most important section is the [fourth one](./Projects&Exercises/wordCorrector/Exercises/seccion4/) (it implemets both the hashing and the trie tree).
+The Word Corrector project was the longest by far. It is divided in four sections, where the difficulty increase in each one. Overall, we were reconstructing a dictionary and correcting words. Mooshak (the webpage with all the statement exercise), gave us the instructions of the project. There were some mandatory parts of the project and also some optional features (it was in our hand to choose which one to implement).
+[Section 1](./Projects&Exercises/wordCorrector/Exercises/seccion1/) helped us to  get the basic structure of the project. [Section 2](./Projects&Exercises/wordCorrector/Exercises/seccion2/) implements a hash table and an Anagram feature(this was optional). [Section 3](./Projects&Exercises/wordCorrector/Exercises/seccion3/) implements a trie tree and a 'stretch words' feature (also optional). The most important section is the [fourth one](./Projects&Exercises/wordCorrector/Exercises/seccion4/) (it implements both the hashing and the trie tree).
 
-If you want to try `section 4`, I have attached inside the foulder some input and output files. After you have downloaded the folder (.zip) and unzip it, follow the next steps:
+If you want to try `section 4`, I have attached inside the folder some input and output files. After you have downloaded the folder (.zip) and unzip it, follow the next steps:
 
 1. Open the terminal in the folder.
 2. Write all the commands that appear in the image:
@@ -84,7 +84,7 @@ What we are doing here is to compile the program and run it. The program is made
 
 ### [Graphs](./Projects&Exercises/Grafos)
 
-To learn how to make graph algorithms, I made fout problems. Some of the algorithms were sown in class, but they are reconocibles for many people. In the report are the instructions of how I solved them.
+To learn how to make graph algorithms, I made four problems. Some of the algorithms were sown in class, but they are recognizable to   many people. In the report are the instructions of how I solved them.
 
 [Back to contents](#contents)
 
